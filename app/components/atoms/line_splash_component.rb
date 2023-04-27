@@ -2,7 +2,7 @@
 
 class Atoms::LineSplashComponent < ViewComponent::Base
 
-  def initialize additionalCss
+  def initialize additionalCss:
     @additionalCss = additionalCss
   end
 end
