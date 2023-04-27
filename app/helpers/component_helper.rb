@@ -1,5 +1,10 @@
 module ComponentHelper
 
+    # Molecules
+    def main_section_component
+        render Molecules::MainSectionComponent.new
+    end
+
     # Organisms
     def promo_header_component
         render Organisms::PromoHeaderComponent.new
@@ -30,7 +35,7 @@ module ComponentHelper
         render Atoms::GlobeIconComponent.new
     end
 
-    def button_component btnBgColor: "indigo-500", btnShadowColor: "indigo-100" 
-        render Atoms::ButtonComponent.new btnBgColor: btnBgColor, btnShadowColor: btnShadowColor
+    def button_component btnBgColor: "bg-indigo-500", btnShadowColor: "shadow-indigo-100", textSize: "text-sm", text: "click me", padding: "px-8 py-3.5", additionalCss: ""
+        render Atoms::ButtonComponent.new btnBgColor: btnBgColor, btnShadowColor: btnShadowColor, textSize: textSize, text: text, padding: padding, additionalCss: additionalCss
     end
 end
