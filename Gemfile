@@ -76,3 +76,6 @@ end
 
 #accepts .env file
 gem "dotenv-rails"
+
+# for resuable components
+gem "view_component", "~> 2.82"
