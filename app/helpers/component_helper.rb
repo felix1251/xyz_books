@@ -22,8 +22,15 @@ module ComponentHelper
         render Atoms::SearchIconComponent.new additionalCss: additionalCss
     end
 
-    def text_input_component type: "default"
-        render Atoms::TextInputComponent.new type: type
+    def text_input_component type: "default", additionalCss: ""
+        render Atoms::TextInputComponent.new type: type, additionalCss: additionalCss
     end
 
+    def globe_icon_component
+        render Atoms::GlobeIconComponent.new
+    end
+
+    def button_component btnBgColor: "indigo-500", btnShadowColor: "indigo-100" 
+        render Atoms::ButtonComponent.new btnBgColor: btnBgColor, btnShadowColor: btnShadowColor
+    end
 end
