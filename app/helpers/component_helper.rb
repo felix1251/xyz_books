@@ -82,4 +82,16 @@ module ComponentHelper
     def book_card_component title: "Book Title Here!", img:, type: "minimal"
         render Atoms::BookCardComponent.new title: title, img: img, type: type
     end
+
+    def box_icon_component
+        render Atoms::BoxIconComponent.new
+    end
+
+    def help_icon_component
+        render Atoms::HelpIconComponent.new
+    end
+
+    def pigi_bank_icon_component
+        render Atoms::PigiBankIconComponent.new
+    end
 end
