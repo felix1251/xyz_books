@@ -19,8 +19,8 @@ module ComponentHelper
     end
 
     # Atoms
-    def line_splash_component additionalCss: ""
-        render Atoms::LineSplashComponent.new additionalCss: additionalCss
+    def line_splash_component orrientation: ""
+        render Atoms::LineSplashComponent.new orrientation: orrientation
     end
 
     def main_logo_component
