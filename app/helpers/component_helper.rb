@@ -35,7 +35,22 @@ module ComponentHelper
         render Atoms::GlobeIconComponent.new
     end
 
-    def button_component btnBgColor: "bg-indigo-500", btnShadowColor: "shadow-indigo-100", textSize: "text-sm", text: "click me", padding: "px-8 py-3.5", additionalCss: ""
-        render Atoms::ButtonComponent.new btnBgColor: btnBgColor, btnShadowColor: btnShadowColor, textSize: textSize, text: text, padding: padding, additionalCss: additionalCss
+    def button_component btnBgColor: "bg-indigo-500", btnShadowColor: "shadow-indigo-100", 
+        textSize: "text-sm", text: "click me", padding: "px-8 py-3.5", additionalCss: "", 
+        textColor: "text-white", arrow: false
+
+        render Atoms::ButtonComponent.new btnBgColor: btnBgColor, btnShadowColor: btnShadowColor, textSize: textSize, text: text, padding: padding, additionalCss: additionalCss, textColor: textColor, arrow: arrow
+    end
+
+    def hero_illlustration_component
+        render Atoms::HeroIllustrationComponent.new
+    end
+
+    def arrow_down_component
+        render Atoms::ArrowDownComponent.new
+    end
+
+    def binance_logo_component
+        render Atoms::BinanceLogoComponent.new
     end
 end

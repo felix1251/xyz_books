@@ -1,5 +1,6 @@
  <button 
-    class="<%= @btnBgColor %> <%= @btnShadowColor %> <%= @textSize %> <%= @padding %> <%= @additionalCss %> text-white rounded-[13px] shadow-xl transform transition duration-100"
+    class="<%= @btnBgColor %> <%= @btnShadowColor %> <%= @textSize %> <%= @padding %> <%= @additionalCss %> <%= @textColor %> flex items-center gap-3 font-medium rounded-[13px] shadow-xl transform transition duration-100"
 >
    <%= @text %>
+   <%= arrow_down_component  if @arrow%>
  </button>

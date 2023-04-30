@@ -74,8 +74,8 @@ group :test do
   gem "webdrivers"
 end
 
-#accepts .env file
+# Accepts .env file
 gem "dotenv-rails"
 
-# for resuable components
+# For resuable components
 gem "view_component", "~> 2.82"

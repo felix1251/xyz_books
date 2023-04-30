@@ -1,19 +1,52 @@
-<section class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-6 h-[700px]">
-     <div class="md:col-span-3 flex items-center">
-        <div class="max-w-[600px] space-y-10">
-            <h1 class="font-bold text-5xl md:text-[5rem] text-blue-950">
-                The Cheapest Textsbooks
-            </h1>
-            <h2 class="text-indigo-500 font-bold text-[2rem] leading-10 max-w-[440px]">
-                Save Up To 90% On Millions Of Titles 
-            </h2>
-            <p class="text-2xl font-medium text-blue-950">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et
-                dolore magna.
-            </p>
-            <%= button_component text: "Get Started", textSize: "text-2xl", padding: "px-12 py-5", additionalCss: "hover:scale-105" %>
+<div class="bg-gradient-to-r from-sky-500 from-20% via-blue-500 via-50% to-indigo-500 to-90% bg-opacity-60">
+    <section style="background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(0,0,0,0)), color-stop(.5,white))">
+        <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-6 h-[750px]">
+            <div class="relative md:col-span-3 flex items-center">
+                <%# <img class="absolute -left-[450px] -bottom-[200px]" src="<%= asset_path('yellow_glow.png') %>
+                <div class="z-10 max-w-[600px] space-y-10">
+                    <h1 class="font-bold text-5xl md:text-[5rem] text-blue-950">
+                        The Cheapest Textsbooks
+                    </h1>
+                    <h2 class="text-indigo-500 font-bold text-[2rem] leading-10 max-w-[440px]">
+                        Save Up To 90% On Millions Of Titles 
+                    </h2>
+                    <p class="text-2xl font-medium text-blue-950">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod tempor invidunt ut labore et
+                        dolore magna.
+                    </p>
+                    <%= button_component text: "Get Started", arrow: true, btnShadowColor: "shadow-indigo-300", textSize: "text-2xl", padding: "px-10 py-4", additionalCss: "hover:scale-105" %>
+                </div>
+            </div>
+            <div class="col-span-3 flex items-center">
+                <%= hero_illlustration_component %>
+            </div>
         </div>
-    </div>
-    <div class="col-span-2 hidden md:block"></div>
-</section>
+    </section>
+    <section class="container mx-auto py-12 px-5">
+        <div class="grid grid-cols-1 md:grid-cols-6">
+            <div class="md:col-span-3 ">
+                <img src="<%= asset_path("comment.png") %>">
+            </div>
+            <div class="md:col-span-3 grid place-items-center">
+                <div class="max-w-[500px]">
+                    <h2 class="font-bold text-white text-[2.8rem] mb-8">Our Commitment</h2>
+                    <p class="text-white font-medium text-lg mb-9">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, Clients
+                        sed diam nonumy eirmod tempor invidunt ut labore et
+                        dolore magna aliquyam erat, sed diam voluptua. At
+                        vero eos et accusam et justo duo dolores et ea rebum
+                    </p>
+                    <%= button_component text: "Learn More", arrow: true, textColor: "text-sky-300", btnBgColor: "bg-blue-950", btnShadowColor: "shadow-blue-700", textSize: "text-xl", padding: "px-10 py-4", additionalCss: "hover:scale-105" %>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-center text-white font-bold text-[2.5rem] mb-12">Trusted By Awesome <span class="text-orange-300">Clients</span></h1>
+        <div class="flex justify-center gap-5">
+            <div class="flex gap-4 items-center text-white">
+                <%= binance_logo_component %>
+                <span class="text-2xl font-semibold">Binance</span>
+            </div> 
+        </div>
+    </section>
+</div>
