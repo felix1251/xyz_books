@@ -5,6 +5,10 @@ module ComponentHelper
         render Molecules::MainSectionComponent.new
     end
 
+    def explore_section_component
+        render Molecules::ExploreSectionComponent.new
+    end
+
     # Organisms
     def promo_header_component
         render Organisms::PromoHeaderComponent.new

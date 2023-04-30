@@ -1,0 +1,33 @@
+<section class="py-32">
+    <div>
+        <h2 class="text-center font-bold text-[2.7rem] text-blue-950 mb-5">Explore Our Books</h2>
+        <p class="text-center font-medium text-xl max-w-[850px] mx-auto text-gray-900">
+            With our dedicated customer support team, you can rest easy knowing that we’re doing everything
+            we can to save you time, money, and stress.
+        </p>
+        <div class="mt-20 grid grid-cols-3 gap-14 max-w-[85rem] mx-auto px-5">
+            <% [{img_path: "doughnuts_&_Doom.png", title: "Doughnuts And Doom"},
+                {img_path: "The_Bend_of_Luck.png", title: "The Bend Of Luck"},
+                {img_path: "The_Underwater_Welder.png", title: "The Underwater Welder"}].each do |book| 
+            %>
+                <div>
+                    <a href="/">
+                        <div class="hover:scale-105 transform transition duration-100 mb-8 p-4 backdrop-blur-xl rounded-xl border border-white" style="background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgb(220,220,220,0.5)), color-stop(.5,white))">
+                            <img src="<%= asset_path(book[:img_path]) %>" />
+                        </div>
+                    </a>
+                    <div class="">
+                        <h2 class="text-white font-bold text-3xl mb-4"><%= book[:title] %></h2>
+                        <a class="hover:underline underline-offset-8 decoration-2 flex items-center gap-3 text-sky-300 font-medium text-xl" href="#">
+                            View Book Details
+                            <%= arrow_down_component %>
+                        </a>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="relative h-[1000px] before:absolute before:-z-10 before:bg-blue-950 before:h-full before:w-full before:-skew-y-3 before:-mt-48">
+      
+    </div>
+</section>
