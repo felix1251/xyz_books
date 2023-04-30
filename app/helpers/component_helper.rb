@@ -9,6 +9,10 @@ module ComponentHelper
         render Molecules::ExploreSectionComponent.new
     end
 
+    def review_section_component
+        render Molecules::ReviewSectionComponent.new
+    end
+
     # Organisms
     def promo_header_component
         render Organisms::PromoHeaderComponent.new
@@ -51,8 +55,8 @@ module ComponentHelper
         render Atoms::ArrowDownComponent.new
     end
 
-    def client_logo_component text: "Logo Title", logo:
-        render Atoms::ClientLogoComponent.new text: text, logo: logo
+    def client_logo_component text: "Logo Title", logo:, textColor: "text-white"
+        render Atoms::ClientLogoComponent.new text: text, logo: logo, textColor: textColor
     end
 
     def binance_logo_component
