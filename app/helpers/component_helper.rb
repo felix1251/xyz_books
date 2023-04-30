@@ -78,4 +78,8 @@ module ComponentHelper
     def xrp_logo_component
         render Atoms::XrpLogoComponent.new
     end
+
+    def book_card_component title: "Book Title Here!", img:, type: "minimal"
+        render Atoms::BookCardComponent.new title: title, img: img, type: type
+    end
 end

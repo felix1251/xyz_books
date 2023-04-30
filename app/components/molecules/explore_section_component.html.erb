@@ -10,20 +10,7 @@
                 {img_path: "The_Bend_of_Luck.png", title: "The Bend Of Luck"},
                 {img_path: "The_Underwater_Welder.png", title: "The Underwater Welder"}].each do |book| 
             %>
-                <div>
-                    <a href="/">
-                        <div class="hover:scale-105 transform transition duration-100 mb-8 p-4 backdrop-blur-xl rounded-xl border border-white" style="background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgb(220,220,220,0.5)), color-stop(.5,white))">
-                            <img src="<%= asset_path(book[:img_path]) %>" />
-                        </div>
-                    </a>
-                    <div class="">
-                        <h2 class="text-white font-bold text-3xl mb-4"><%= book[:title] %></h2>
-                        <a class="hover:underline underline-offset-8 decoration-2 flex items-center gap-3 text-sky-300 font-medium text-xl" href="#">
-                            View Book Details
-                            <%= arrow_down_component %>
-                        </a>
-                    </div>
-                </div>
+                <%= book_card_component title: book[:title], img: asset_path(book[:img_path])  %>
             <% end %>
         </div>
     </div>
