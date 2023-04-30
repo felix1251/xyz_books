@@ -39,11 +39,8 @@ module ComponentHelper
         render Atoms::GlobeIconComponent.new
     end
 
-    def button_component btnBgColor: "bg-indigo-500", btnShadowColor: "shadow-indigo-100", 
-        textSize: "text-sm", text: "click me", padding: "px-8 py-3.5", additionalCss: "", 
-        textColor: "text-white", arrow: false
-
-        render Atoms::ButtonComponent.new btnBgColor: btnBgColor, btnShadowColor: btnShadowColor, textSize: textSize, text: text, padding: padding, additionalCss: additionalCss, textColor: textColor, arrow: arrow
+    def button_component text: "click me", arrow: false, type: "default"
+        render Atoms::ButtonComponent.new text: text, arrow: arrow, type: type
     end
 
     def hero_illlustration_component

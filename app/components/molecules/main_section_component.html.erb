@@ -15,7 +15,7 @@
                         sed diam nonumy eirmod tempor invidunt ut labore et
                         dolore magna.
                     </p>
-                    <%= button_component text: "Get Started", arrow: true, btnShadowColor: "shadow-indigo-300", textSize: "text-2xl", padding: "px-10 py-4", additionalCss: "hover:scale-105" %>
+                    <%= button_component text: "Get Started", arrow: true %>
                 </div>
             </div>
             <div class="col-span-3 flex items-center">
@@ -30,19 +30,19 @@
             </div>
             <div class="md:col-span-3 grid place-items-center">
                 <div class="max-w-[500px]">
-                    <h2 class="font-bold text-white text-[2.8rem] mb-8">Our Commitment</h2>
-                    <p class="text-white font-medium text-lg mb-9">
+                    <h2 class="font-bold text-white text-[2.8rem] mb-7">Our Commitment</h2>
+                    <p class="text-white font-medium text-lg mb-10">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, Clients
                         sed diam nonumy eirmod tempor invidunt ut labore et
                         dolore magna aliquyam erat, sed diam voluptua. At
                         vero eos et accusam et justo duo dolores et ea rebum
                     </p>
-                    <%= button_component text: "Learn More", arrow: true, textColor: "text-sky-300", btnBgColor: "bg-blue-950", btnShadowColor: "shadow-blue-700", textSize: "text-xl", padding: "px-10 py-4", additionalCss: "hover:scale-105" %>
+                    <%= button_component text: "Learn More", arrow: true, type: "dark"%>
                 </div>
             </div>
         </div>
         <h1 class="text-center text-white font-bold text-[2.5rem] mb-10">Trusted By Awesome <span class="text-orange-300">Clients</span></h1>
-        <div class="flex justify-center gap-20">
+        <div class="flex flex-wrap justify-center gap-20">
             <%= client_logo_component text: "Binance", logo: binance_logo_component %>
             <%= client_logo_component text: "Bitcoin", logo: bitcoin_logo_component %>
             <%= client_logo_component text: "Solana", logo: solona_logo_component %>

@@ -3,14 +3,18 @@
 class Atoms::ButtonComponent < ViewComponent::Base
     delegate :arrow_down_component, to: :helpers
 
-    def initialize btnBgColor:, btnShadowColor:, textSize:, text:, padding:, additionalCss:, textColor:, arrow:
-        @btnBgColor = btnBgColor
-        @btnShadowColor = btnShadowColor
-        @textSize= textSize
+    def initialize text:, arrow:, type:
         @text = text
-        @padding = padding
-        @additionalCss = additionalCss
-        @textColor = textColor
         @arrow = arrow
+        @type = type
+    end
+    
+    def twcss
+      case @type
+      when "dark"
+        "bg-blue-950 shadow-blue-700 text-sky-300"
+      when "default"
+        "bg-indigo-500 shadow-indigo-300 text-white"
+      end
     end
 end
