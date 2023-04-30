@@ -1,8 +1,8 @@
-<div class="bg-gradient-to-r from-sky-500 from-20% via-blue-500 via-50% to-indigo-500 to-90% bg-opacity-60">
+<div class="bg-gradient-to-r from-sky-500 from-15% via-indigo-500 via-50% to-sky-500 to-90% bg-opacity-60">
     <section style="background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(0,0,0,0)), color-stop(.5,white))">
         <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-6 h-[750px]">
             <div class="relative md:col-span-3 flex items-center">
-                <%# <img class="absolute -left-[450px] -bottom-[200px]" src="<%= asset_path('yellow_glow.png') %>
+                <img class="absolute -left-[450px] -bottom-[200px]" src="<%= asset_path('yellow_glow.png')%>"/>
                 <div class="z-10 max-w-[600px] space-y-10">
                     <h1 class="font-bold text-5xl md:text-[5rem] text-blue-950">
                         The Cheapest Textsbooks
@@ -23,8 +23,8 @@
             </div>
         </div>
     </section>
-    <section class="container mx-auto py-12 px-5">
-        <div class="grid grid-cols-1 md:grid-cols-6">
+    <section class="container mx-auto pt-12 pb-32 px-5">
+        <div class="grid grid-cols-1 md:grid-cols-6 mb-2">
             <div class="md:col-span-3 ">
                 <img src="<%= asset_path("comment.png") %>">
             </div>
@@ -41,12 +41,14 @@
                 </div>
             </div>
         </div>
-        <h1 class="text-center text-white font-bold text-[2.5rem] mb-12">Trusted By Awesome <span class="text-orange-300">Clients</span></h1>
-        <div class="flex justify-center gap-5">
-            <div class="flex gap-4 items-center text-white">
-                <%= binance_logo_component %>
-                <span class="text-2xl font-semibold">Binance</span>
-            </div> 
+        <h1 class="text-center text-white font-bold text-[2.5rem] mb-10">Trusted By Awesome <span class="text-orange-300">Clients</span></h1>
+        <div class="flex justify-center gap-16">
+            <%= client_logo_component text: "Binance", logo: binance_logo_component %>
+            <%= client_logo_component text: "Bitcoin", logo: bitcoin_logo_component %>
+            <%= client_logo_component text: "Solana", logo: solona_logo_component %>
+            <%= client_logo_component text: "Ethereum", logo: ethereum_logo_component %>
+            <%= client_logo_component text: "Tether", logo: tether_logo_component %>
+            <%= client_logo_component text: "XRP", logo: xrp_logo_component %>
         </div>
     </section>
 </div>

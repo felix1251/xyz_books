@@ -50,7 +50,31 @@ module ComponentHelper
         render Atoms::ArrowDownComponent.new
     end
 
+    def client_logo_component text: "Logo Title", logo:
+        render Atoms::ClientLogoComponent.new text: text, logo: logo
+    end
+
     def binance_logo_component
         render Atoms::BinanceLogoComponent.new
+    end
+
+    def bitcoin_logo_component
+        render Atoms::BitcoinLogoComponent.new
+    end
+
+    def solona_logo_component
+        render Atoms::SolonaLogoComponent.new
+    end
+
+    def ethereum_logo_component
+        render Atoms::EthereumLogoComponent.new
+    end
+
+    def tether_logo_component
+        render Atoms::TetherLogoComponent.new
+    end
+    
+    def xrp_logo_component
+        render Atoms::XrpLogoComponent.new
     end
 end
