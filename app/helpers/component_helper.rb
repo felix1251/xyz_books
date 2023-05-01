@@ -114,4 +114,8 @@ module ComponentHelper
     def rating_component
         render Atoms::RatingComponent.new
     end
+
+    def bold_arrow_compoenent twcss: "rotate-0"
+        render Atoms::BoldArrowDownComponent.new twcss: twcss
+    end
 end
