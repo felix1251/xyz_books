@@ -98,4 +98,8 @@ module ComponentHelper
     def pigi_bank_icon_component
         render Atoms::PigiBankIconComponent.new
     end
+
+    def comment_logo_component
+        render Atoms::CommentLogoComponent.new
+    end
 end
