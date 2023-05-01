@@ -147,4 +147,8 @@ module ComponentHelper
     def twitter_icon_component
         render Atoms::TwitterIconComponent.new
     end
+
+    def hamburger_icon_component
+        render Atoms::HamburgerIconComponent.new
+    end
 end
