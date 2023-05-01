@@ -1,9 +1,9 @@
 <section id="main_section" class="bg-gradient-to-r from-sky-500 from-15% via-indigo-500 via-50% to-sky-500 to-90% bg-opacity-60">
     <section style="background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(0,0,0,0)), color-stop(.5,white))">
-        <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-6 h-[750px]">
+        <div class="container mx-auto px-5 grid grid-cols-1 xl:grid-cols-6 h-[700px] xl:h-[750px]">
             <div class="relative md:col-span-3 flex items-center">
                 <img class="absolute -left-[450px] -bottom-[200px]" src="<%= asset_path('yellow_glow.png')%>"/>
-                <div class="z-10 max-w-[600px] space-y-10">
+                <div class="z-10 xl:mx-none xl:max-w-[600px] space-y-10">
                     <h1 class="font-bold text-5xl md:text-[4.7rem] text-blue-950">
                         The Cheapest Textsbooks
                     </h1>
@@ -18,19 +18,19 @@
                     <%= button_component text: "Get Started", arrow: true %>
                 </div>
             </div>
-            <div class="col-span-3 flex items-center">
+            <div class="hidden xl:flex col-span-3 items-center">
                 <%= hero_illlustration_component %>
             </div>
         </div>
     </section>
-    <section class="container mx-auto pt-12 pb-36 px-5">
-        <div class="grid grid-cols-1 md:grid-cols-6 mb-2">
-            <div class="md:col-span-3 ">
+    <section class="container mx-auto xl:pt-12 pb-20 md:pb-36 px-5">
+        <div class="grid grid-cols-1 xl:grid-cols-6 mb-20 xl:mb-2">
+            <div class="hidden xl:block col-span-3">
                 <img src="<%= asset_path("comment.png") %>">
             </div>
-            <div class="md:col-span-3 grid place-items-center">
-                <div class="max-w-[500px]">
-                    <h2 class="font-bold text-white text-[2.8rem] mb-7">Our Commitment</h2>
+            <div class="xl:col-span-3 grid place-items-center">
+                <div class="xl:max-w-[500px]">
+                    <h2 class="font-bold text-white text-3xl md:text-4xl xl:text-[2.8rem] mb-7">Our Commitment</h2>
                     <p class="text-white font-medium text-lg mb-10">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, Clients
                         sed diam nonumy eirmod tempor invidunt ut labore et
@@ -41,8 +41,8 @@
                 </div>
             </div>
         </div>
-        <h1 class="text-center text-white font-bold text-[2.5rem] mb-10">Trusted By Awesome <span class="text-orange-300">Clients</span></h1>
-        <div class="flex flex-wrap justify-center gap-20 scale-110">
+        <h1 class="text-center text-white font-bold text-3xl md:text-4xl xl:text-[2.5rem] mb-10">Trusted By Awesome <span class="text-orange-300">Clients</span></h1>
+        <div class="grid grid-cols-2 place-items-center md:flex md:flex-wrap md:justify-center gap-8 md:gap-20 md:scale-110">
             <%= client_logo_component text: "Binance", logo: binance_logo_component %>
             <%= client_logo_component text: "Bitcoin", logo: bitcoin_logo_component %>
             <%= client_logo_component text: "Solana", logo: solona_logo_component %>

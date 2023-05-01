@@ -9,9 +9,9 @@ class Atoms::LogoComponent < ViewComponent::Base
     def logo_size
         case @size
         when "sm"
-            "h-14"
+            "h-12 md:h-14"
         when "md"
-            "h-20"
+            "h-14 md:h-20"
         end
     end
 end

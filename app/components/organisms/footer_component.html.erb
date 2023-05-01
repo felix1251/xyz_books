@@ -1,13 +1,13 @@
-<footer class="container mx-auto px-5 py-36">
-    <div class="grid grid-cols-5 gap-3">
-        <div class="col-span-2 space-y-10 max-w-[380px]">
+<footer class="container mx-auto px-5 py-20 md:py-36">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-7 md:gap-3">
+        <div class="col-span-2 space-y-6 md:space-y-10 max-w-[380px]">
             <%= main_logo_component size: "md" %>
-            <p class="text-xl mb-6 text-[#061A36] font-medium leading-relaxed">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+            <p class="text-lg md:text-xl mb-6 text-[#061A36] font-medium leading-relaxed">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
              <%= text_input_component type: "email", additionalCss: "w-4/5" %>
         </div>
         <div>
-            <h2 class="text-[#061A36] font-bold text-[1.6rem] mb-3">Menu</h2>
-            <ul class="text-gray-500 space-y-2 font-medium text-lg">
+            <h2 class="text-[#061A36] font-bold text-[1.3rem] md:text-[1.6rem] mb-3">Menu</h2>
+            <ul class="text-gray-500 space-y-2 font-medium text-md md:text-lg">
                 <li>Shop All</li>
                 <li>About Us</li>
                 <li>Community</li>
@@ -15,8 +15,8 @@
             </ul>
         </div>
          <div>
-            <h2 class="text-[#061A36] font-bold text-[1.6rem] mb-3">Support</h2>
-            <ul class="text-gray-500 space-y-2 font-medium text-lg">
+            <h2 class="text-[#061A36] font-bold text-[1.3rem] md:text-[1.6rem] mb-3">Support</h2>
+            <ul class="text-gray-500 space-y-2 font-medium text-md md:text-lg">
                 <li>Shipping & Returns</li>
                 <li>Help & FAQ</li>
                 <li>Terms & Conditions</li>
@@ -26,8 +26,8 @@
             </ul>
         </div>
          <div>
-            <h2 class="text-[#061A36] font-bold text-[1.6rem] mb-3">Resources</h2>
-            <ul class="text-gray-500 space-y-2 font-medium text-lg">
+            <h2 class="text-[#061A36] font-bold text-[1.3rem] md:text-[1.6rem] mb-3">Resources</h2>
+            <ul class="text-gray-500 space-y-2 font-medium text-md md:text-lg">
                 <li>Shipping & Returns</li>
                 <li>Help & FAQ</li>
                 <li>Terms & Conditions</li>
@@ -37,8 +37,8 @@
             </ul>
         </div>
     </div>
-    <div class="flex justify-between items-center mt-20">
-        <a href="/" class="text-[#061A36] font-medium text-lg">
+    <div class="flex flex-col md:flex-row gap-4 md:justify-between items-center mt-10 md:mt-20">
+        <a href="/" class="text-[#061A36] font-medium text-md md:text-lg">
             © <%= get_current_year %> Brainly.
         </a>
         <div class="flex gap-6">
