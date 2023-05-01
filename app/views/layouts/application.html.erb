@@ -9,9 +9,6 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= promo_header_component %>
-    <%= navbar_component %>
-    <%= yield %>
-    <%= comment_logo_component %>
+   <%= main_layout_component view: yield %>
   </body>
 </html>

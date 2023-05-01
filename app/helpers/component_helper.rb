@@ -1,5 +1,10 @@
 module ComponentHelper
 
+    # Templates
+    def main_layout_component view:
+        render Templates::MainComponent.new view: view
+    end
+
     # Molecules
     def main_section_component
         render Molecules::MainSectionComponent.new
