@@ -102,4 +102,12 @@ module ComponentHelper
     def comment_logo_component
         render Atoms::CommentLogoComponent.new
     end
+
+    def review_card_component
+        render Atoms::ReviewCardComponent.new
+    end
+
+    def rating_component
+        render Atoms::RatingComponent.new
+    end
 end
