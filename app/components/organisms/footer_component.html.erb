@@ -1,12 +1,50 @@
 <footer class="container mx-auto px-5 py-36">
-    <div class="grid grid-cols-6 gap-3">
+    <div class="grid grid-cols-5 gap-3">
         <div class="col-span-2 space-y-10 max-w-[380px]">
             <%= main_logo_component size: "md" %>
-            <p class="text-xl mb-6 text-[#061A36]">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+            <p class="text-xl mb-6 text-[#061A36] font-medium leading-relaxed">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
              <%= text_input_component type: "email", additionalCss: "w-4/5" %>
         </div>
-        <div>hi</div>
-        <div>hi</div>
-        <div>hi</div>
+        <div>
+            <h2 class="text-[#061A36] font-bold text-[1.6rem] mb-3">Menu</h2>
+            <ul class="text-gray-500 space-y-2 font-medium text-lg">
+                <li>Shop All</li>
+                <li>About Us</li>
+                <li>Community</li>
+                <li>FAQs</li>
+            </ul>
+        </div>
+         <div>
+            <h2 class="text-[#061A36] font-bold text-[1.6rem] mb-3">Support</h2>
+            <ul class="text-gray-500 space-y-2 font-medium text-lg">
+                <li>Shipping & Returns</li>
+                <li>Help & FAQ</li>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>Contact</li>
+                <li>Login</li>
+            </ul>
+        </div>
+         <div>
+            <h2 class="text-[#061A36] font-bold text-[1.6rem] mb-3">Resources</h2>
+            <ul class="text-gray-500 space-y-2 font-medium text-lg">
+                <li>Shipping & Returns</li>
+                <li>Help & FAQ</li>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>Contact</li>
+                <li>Login</li>
+            </ul>
+        </div>
+    </div>
+    <div class="flex justify-between items-center mt-20">
+        <a href="/" class="text-[#061A36] font-medium text-lg">
+            © <%= get_current_year %> Brainly.
+        </a>
+        <div class="flex gap-6">
+            <%= social_icon_conponent icon: facebook_icon_component %>
+            <%= social_icon_conponent icon: linkin_icon_component %>
+            <%= social_icon_conponent icon: twitter_icon_component %>
+        </div>
     </div>
 </footer>

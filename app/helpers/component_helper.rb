@@ -131,4 +131,20 @@ module ComponentHelper
     def question_component title:, details:, close: true
         render Atoms::QuestionComponent.new title: title, details: details, close: close
     end
+
+    def facebook_icon_component
+        render Atoms::FacebookIconComponent.new
+    end
+
+    def social_icon_conponent icon:
+        render Atoms::SocialIconComponent.new icon: icon
+    end
+
+    def linkin_icon_component
+       render Atoms::LinkinIconComponent.new
+    end
+
+    def twitter_icon_component
+        render Atoms::TwitterIconComponent.new
+    end
 end
