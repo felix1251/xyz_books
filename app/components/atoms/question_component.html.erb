@@ -3,9 +3,7 @@
         <div class="hover:underline underline-offset-8 text-[1.7rem] font-bold"> <%= @title %> </div>
         <%= bold_arrow_compoenent twcss: @close && "-rotate-90"%>
     </div>
-    <% if @details %>
-        <div class="text-[1.4rem]">
-            <%= @details %>
-        </div>
-    <% end %>
+    <div class="<%= @close && "hidden" %> text-[1.4rem] text-blue-950">
+        <%= @details %>
+    </div>
 </div>

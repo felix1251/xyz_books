@@ -31,13 +31,17 @@ module ComponentHelper
         render Organisms::NavbarComponent.new
     end
 
+    def footer_component
+        render Organisms::FooterComponent.new
+    end
+
     # Atoms
     def line_splash_component orrientation: ""
         render Atoms::LineSplashComponent.new orrientation: orrientation
     end
 
-    def main_logo_component
-        render Atoms::LogoComponent.new
+    def main_logo_component size: "sm"
+        render Atoms::LogoComponent.new size: size
     end
 
     def search_icon_component additionalCss: ""
