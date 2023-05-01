@@ -13,6 +13,10 @@ module ComponentHelper
         render Molecules::ReviewSectionComponent.new
     end
 
+    def question_section_component
+        render Molecules::QuestionSectionComponent.new
+    end
+
     # Organisms
     def promo_header_component
         render Organisms::PromoHeaderComponent.new
