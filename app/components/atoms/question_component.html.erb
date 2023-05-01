@@ -1,9 +1,9 @@
 <div class="space-y-4">
     <div class="flex items-center cursor-pointer flex justify-between text-indigo-500">
-        <div class="hover:underline underline-offset-8 text-[1.3rem] md:text-[1.7rem] font-bold"> <%= @title %> </div>
+        <div class="hover:underline underline-offset-8 text-[1.2rem] md:text-[1.7rem] font-medium md:font-bold"> <%= @title %> </div>
         <%= bold_arrow_compoenent twcss: @close && "-rotate-90"%>
     </div>
-    <div class="<%= @close && "hidden" %> text-[1.2rem] md:text-[1.4rem] text-[#061A36]">
+    <div class="<%= @close && "hidden" %> text-[1.1rem] md:text-[1.4rem] text-[#061A36]">
         <%= @details %>
     </div>
 </div>
