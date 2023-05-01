@@ -118,4 +118,8 @@ module ComponentHelper
     def bold_arrow_compoenent twcss: "rotate-0"
         render Atoms::BoldArrowDownComponent.new twcss: twcss
     end
+
+    def question_component title:, details:, close: true
+        render Atoms::QuestionComponent.new title: title, details: details, close: close
+    end
 end
