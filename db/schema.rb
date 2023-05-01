@@ -10,5 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_01_154601) do
+  create_table "authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "middle_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title"
+    t.string "isbn_13"
+    t.string "isbn_10"
+    t.datetime "publication_year"
+    t.string "edition"
+    t.bigint "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "publisher_id"
+    t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["isbn_10"], name: "index_books_on_isbn_10"
+    t.index ["isbn_13"], name: "index_books_on_isbn_13"
+    t.index ["publisher_id"], name: "index_books_on_publisher_id"
+  end
+
+  create_table "publishers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "books", "authors"
+  add_foreign_key "books", "publishers"
 end
