@@ -4,7 +4,7 @@
 
 ***Ruby on Rails version 7.0.4***
 
-## Clone repo
+## Clone Repo
 ```
 git clone https://github.com/felix1251/xyz_books.git
 ```
@@ -26,7 +26,7 @@ DB_PASSWORD = your_db_pasword
 ```
 rails db:setup
 ```
-**Or equivalent**
+**Or Equivalent**
 ```
 rails db:create
 ```
@@ -36,7 +36,11 @@ rails db:mgrate
 ```
 rails db:seed
 ```
-## **Run local server**
+**Reset Setup** (Only if needed)
+```
+rails db:reset
+```
+## **Run Local Server**
 ```
 ./bin/dev
 ```
