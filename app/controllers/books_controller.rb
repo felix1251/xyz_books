@@ -6,10 +6,10 @@ class BooksController < ApplicationController
 
         @authors = @book.book_authors.select("book_authors.book_id, GROUP_CONCAT(CONCAT(authors.first_name,' ',authors.last_name)) as book_author")
                         .joins(:author)
-                        .group("book_authors.book_id")
+                        .group("book_authors.book_id") rescue nil
 
         if @book
-            render turbo_stream: turbo_stream.replace("book", partial: "books/search", locals: { book: @book, authors: @authors })
+            render turbo_stream: turbo_stream.replace("book", partial: "books/search", locals: { book: @book, authors: @authors || [] })
         else
             render turbo_stream: turbo_stream.replace("book", target: "book", partial: "books/not_found")
         end
