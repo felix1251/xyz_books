@@ -4,7 +4,7 @@
 
 ***Ruby on Rails version 7.0.4***
 
-[Live App](http://xyzbooks.fjc-shop.online)
+[Live App](http://xyzbooks.fjc-shop.online){:target="_blank"}
 
 ## Clone Repo
 ```
