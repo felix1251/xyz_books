@@ -1,6 +1,8 @@
 class Book < ApplicationRecord
     include Isbnify
-    belongs_to :author
+
+    has_one_attached :cover
+    has_many :book_authors
     belongs_to :publisher
     validates :isbn_10, uniqueness: true
     validates :isbn_13, uniqueness: true

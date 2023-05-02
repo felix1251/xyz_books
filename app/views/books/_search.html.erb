@@ -1,3 +1,19 @@
-<div id="book" class="min-h-[250px] container mx-auto px-5">
-    <%= book.id %>
+<div id="book" class="min-h-[250px] container mx-auto px-5 py-10">
+    <h1 class="text-blue-950 font-bold text-5xl mb-20">Search Result</h1>
+    <div class="flex flex-col md:flex-row gap-28">
+        <img class="max-h-[450px]" src="<%= rails_blob_path(book.cover) %>">
+        <div class="flex flex-col gap-10 text-[#061A36] font-bold">
+            <h2 class="font-bold text-[2.2rem]"><%= book.title %></h2>
+            <div class="max-w-[700px] text-[1.3rem]"> by
+                <%= authors[0]&.book_author || "N/A" %>
+            </div>
+            <ul class="text-[1.4rem] space-y-1.5">
+                <li>Edition: <span class="text-indigo-500"><%= book.edition %></span></li>
+                <li>Price: <span class="text-indigo-500">PHP 100.00</span></li>
+                <li>ISBN: <span class="text-indigo-500"><%= book.isbn_13 %></span> </li>
+                <li>Publication Year: <span class="text-indigo-500"><%= book.publication_year %></span></li>
+                <li>Publisher: <span class="text-indigo-500"><%= book.name %></span></li>
+            </ul>
+        </div>
+    </div>
 </div>
