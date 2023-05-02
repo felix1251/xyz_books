@@ -39,13 +39,16 @@ export default class extends Controller {
     validate(){
         const invalidElement = document.getElementById("invalid_book")
         const not_found =  document.getElementById("not_found")
+        const search_book =  document.getElementById("search_book")
         
         if(this.isbn10Validate() || this.isbn13Validate()){
             invalidElement.classList.add("hidden")
+            if (search_book) search_book.classList.remove("hidden")
             this.search() 
         }else{
             invalidElement.classList.remove("hidden")
-            if (not_found) not_found.classList.remove("hidden") 
+            if (not_found) not_found.classList.remove("hidden")
+            if (search_book) search_book.classList.add("hidden")
         }
 
         if (not_found) {
