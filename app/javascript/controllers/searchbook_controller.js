@@ -14,14 +14,14 @@ export default class extends Controller {
         this.searchTarget.addEventListener("keypress", (event) => {
             if (event.key === "Enter"){
                 const main = document.getElementById("main")
-                const not_found =  document.getElementById("not_found")
-
+                const book =  document.getElementById("book")
+                const invalidElement = document.getElementById("invalid_book")
+                
                 if(!event.target.value){
-                    const invalidElement = document.getElementById("invalid_book")
                     main.classList.remove("hidden")
+                    if (book) book.classList.add("hidden")
                     invalidElement.classList.add("hidden")
                     this.reloadPathState()
-                    if (not_found) not_found.classList.add("hidden")
                     return
                 }
                 main.classList.add("hidden")
@@ -38,25 +38,14 @@ export default class extends Controller {
 
     validate(){
         const invalidElement = document.getElementById("invalid_book")
-        const not_found =  document.getElementById("not_found")
-        const search_book =  document.getElementById("search_book")
+        const book = document.getElementById("book")
         
         if(this.isbn10Validate() || this.isbn13Validate()){
             invalidElement.classList.add("hidden")
-            if (search_book) search_book.classList.remove("hidden")
             this.search() 
         }else{
             invalidElement.classList.remove("hidden")
-            if (not_found) not_found.classList.remove("hidden")
-            if (search_book) search_book.classList.add("hidden")
-        }
-
-        if (not_found) {
-            if(not_found.classList.contains("hidden")) {
-                not_found.classList.remove("hidden") 
-                return 
-            }
-            not_found.classList.add("hidden")
+            if (book) book.classList.add("hidden")
         }
     }
 
