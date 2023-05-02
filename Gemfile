@@ -79,3 +79,5 @@ gem "dotenv-rails"
 
 # For resuable components
 gem "view_component", "~> 2.82"
+
+gem "isbnify"

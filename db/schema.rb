@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_154601) do
     t.string "title"
     t.string "isbn_13"
     t.string "isbn_10"
-    t.datetime "publication_year"
+    t.string "publication_year"
     t.string "edition"
     t.bigint "author_id", null: false
     t.datetime "created_at", null: false

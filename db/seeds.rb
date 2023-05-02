@@ -6,5 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Author.create!(first_name: "Kingsley", last_name: "Amis")
-Book.create!(title: "")
+author1 = Author.create(first_name: "Kingsley", last_name: "Amis")
+pub1 = Publisher.create(name: "Publishers Weekly")
+book1 = Book.create(title: "Cosmoknights", isbn_13: "978-1-60309-454-2", publication_year: "2019", 
+                    edition: "Book 1", author_id: author1.id, publisher_id: pub1.id)

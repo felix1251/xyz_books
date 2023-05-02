@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :isbn_13, index: true
       t.string :isbn_10, index: true
-      t.datetime :publication_year
+      t.string :publication_year
       t.string :edition
       t.references :author, null: false, foreign_key: true
 

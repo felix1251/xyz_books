@@ -1,9 +1,11 @@
 class Book < ApplicationRecord
+    include Isbnify
     belongs_to :author
     belongs_to :publisher
     validates :isbn_10, uniqueness: true
     validates :isbn_13, uniqueness: true
-    # validates :publication_year, presence: true
+    validates :publication_year, presence: true
+    validates :edition, presence: true
     validates :title, presence: true, uniqueness: true
 
     validate :validate_isbn
@@ -94,7 +96,7 @@ class Book < ApplicationRecord
         sum = 0
 
         for i in 0..isbn.length - 1
-            sum += isbn[i].to_i * if i.isOdd then 3 else 1 end
+            sum += isbn[i].to_i * if i.odd? then 3 else 1 end
         end
     
         result = (10 - sum % 10) % 10 # Fixnum
@@ -104,18 +106,15 @@ class Book < ApplicationRecord
 
     def isbnFormatter(type:, isbn:)
         isbn_value = isbn.upcase.gsub(/\ |-/, '')
-        inc_values = []
 
         if type == "10"
-            inc_values = [1,6,12]
+            [1,5,11].each do |pos|
+                isbn_value.insert(pos, "-")
+            end
         elsif type == "13"
-            inc_values = [3,6,12, 15]
+            isbn_value = Isbnify::ISBN.hyphinate_isbn(isbn_value) 
         end
 
-        inc_values.each do |pos|
-            isbn_value.insert(pos, "-")
-        end
-        
         return isbn_value
     end
 end
