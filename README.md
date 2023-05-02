@@ -17,11 +17,11 @@ cd xyz_books
 ```
 bundle install
 ```
-**Setup DB**
+## **Setup DB**
 ```
 rails db:setup
 ```
-## **Or equivalent**
+**Or equivalent**
 ```
 rails db:create
 ```
