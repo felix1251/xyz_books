@@ -6,14 +6,14 @@
 
 ## **Local commands**
 
-**Clone repo**
+## Clone repo
 ```
 git clone https://github.com/felix1251/xyz_books.git
 ```
 ```
 cd xyz_books
 ```
-**Install Dependencies**
+## Install Dependencies
 ```
 bundle install
 ```
@@ -21,7 +21,7 @@ bundle install
 ```
 rails db:setup
 ```
-**or equivalent**
+## **Or equivalent**
 ```
 rails db:create
 ```
@@ -31,7 +31,7 @@ rails db:mgrate
 ```
 rails db:seed
 ```
-**Run local serve**
+**Run local server**
 ```
 ./bin/dev
 ```
