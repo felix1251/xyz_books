@@ -13,14 +13,18 @@ export default class extends Controller {
 
         this.searchTarget.addEventListener("keypress", (event) => {
             if (event.key === "Enter"){
+                const main = document.getElementById("main")
+                const not_found =  document.getElementById("not_found")
+
                 if(!event.target.value){
-                    const main = document.getElementById("main")
+                    const invalidElement = document.getElementById("invalid_book")
                     main.classList.remove("hidden")
-                    main.classList.add("block")
+                    invalidElement.classList.add("hidden")
                     this.reloadPathState()
-                    document.getElementById("book")?.remove()
+                    if (not_found) not_found.classList.add("hidden")
                     return
                 }
+                main.classList.add("hidden")
                 this.initPath()
                 this.validate()
             }
@@ -29,20 +33,27 @@ export default class extends Controller {
 
     search(){
         this.linkTarget.setAttribute('href', "/search/" + this.searchTarget.value)
-    
-        const main = document.getElementById("main")
-        if (main.classList.contains("block")){
-            main.classList.remove("block")
-            main.classList.add("hidden")
-        }
         this.linkTarget.click() 
     }
 
     validate(){
+        const invalidElement = document.getElementById("invalid_book")
+        const not_found =  document.getElementById("not_found")
+        
         if(this.isbn10Validate() || this.isbn13Validate()){
+            invalidElement.classList.add("hidden")
             this.search() 
         }else{
-            alert("invalid isbn")
+            invalidElement.classList.remove("hidden")
+            if (not_found) not_found.classList.remove("hidden") 
+        }
+
+        if (not_found) {
+            if(not_found.classList.contains("hidden")) {
+                not_found.classList.remove("hidden") 
+                return 
+            }
+            not_found.classList.add("hidden")
         }
     }
 
@@ -84,15 +95,18 @@ export default class extends Controller {
         isbn13 = Array.from(isbn13.replaceAll('-',''))
 
         let checkDigit = Number(isbn13.pop())
+
         let sum = 0
 
-        for(let i = 0; i < isbn13.length; i++){
-            sum = (i + 1) * Number(isbn13[i])
-        }
+        isbn13.forEach((value, index) => {
+            let multiplier = (index % 2 == 0) ? 1 : 3
+            sum += multiplier * Number(value)
+        })
 
         let result = (10 - (sum % 10))
-        if (result == 10)result = 0 
+        if (result == 10) result = 0 
 
+        console.log(result, checkDigit)
         return result == checkDigit
     }
 }

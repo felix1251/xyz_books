@@ -151,4 +151,8 @@ module ComponentHelper
     def hamburger_icon_component
         render Atoms::HamburgerIconComponent.new
     end
+
+    def invalid_isbn_component
+        render Molecules::InvalidIsbnComponent.new
+    end
 end

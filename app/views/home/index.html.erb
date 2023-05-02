@@ -1,4 +1,4 @@
-<main id="main" class="<%= params[:search] ? "hidden" : "block" %>">
+<main id="main" class="<%= params[:search] && "hidden"%>">
     <%= main_section_component %>
     <%= explore_section_component %>
     <%= review_section_component %>
