@@ -33,7 +33,7 @@ book3 = Book.create(title: "Cosmoknights", isbn_10: "1-603-09454-7",
 book4 = Book.create(title: "Essex County", isbn_10: "1-603-09038-X", 
     publication_year: "1990", publisher_id: pub3.id, price: "500"
 )
-book5 = Book.create(title: "Doughnuts And Doom", isbn_13: "978-1-603095-13-6", 
+book5 = Book.create(title: "Doughnuts And Doom", isbn_10: "1-603-09398-2", 
     publication_year: "2022", publisher_id: pub1.id, price: "100"
 )
 
