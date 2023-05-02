@@ -21,15 +21,13 @@ export default class extends Controller {
                     document.getElementById("book")?.remove()
                     return
                 }
+                this.initPath()
                 this.validate()
             }
         });
     }
 
     search(){
-        const changepath = window.location.protocol + "//" + window.location.host + window.location.pathname + '?search=' + this.searchTarget.value;    
-        window.history.pushState({ path: changepath }, '', changepath);
-
         this.linkTarget.setAttribute('href', "/search/" + this.searchTarget.value)
     
         const main = document.getElementById("main")
@@ -52,6 +50,11 @@ export default class extends Controller {
         window.history.pushState({ path: "/" }, '', "/");
     }
 
+    initPath(){
+        const changepath = window.location.protocol + "//" + window.location.host + window.location.pathname + '?search=' + this.searchTarget.value;    
+        window.history.pushState({ path: changepath }, '', changepath);
+    }
+
     isbn10Validate(){
         const pattern = /^(?:\d[\ |-]?){9}[\d|X]$/i
         let isbn10 = this.searchTarget.value
@@ -63,10 +66,11 @@ export default class extends Controller {
         checkDigit = (checkDigit.toUpperCase() == 'X') ? 10 : Number(checkDigit)
         
         let sum = 0
-        for(let i = 0; i < isbn10.length ; i++){
-            sum = (i + 1) * Number(isbn10[i])
-        }
 
+        isbn10.forEach((value, index) => {
+            sum += (index + 1) * Number(value)
+        })
+    
         return (sum % 11) == checkDigit
     }
 

@@ -80,8 +80,6 @@ class Book < ApplicationRecord
         isbn_values = isbn_values.upcase.gsub(/\ |-/, '').split('')
         isbn_values = isbn_values[3, isbn_values.length - 4 ]
 
-        puts isbn_values
-
         sum = 0
         isbn_values.each_with_index do |value, index|
             sum += (index + 1) * value.to_i
