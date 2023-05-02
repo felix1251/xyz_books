@@ -3,9 +3,10 @@
 class Atoms::TextInputComponent < ViewComponent::Base
     delegate :search_icon_component, :arrow_down_component, to: :helpers
 
-    def initialize type:, additionalCss:
+    def initialize type:, additionalCss:, target:
         @type = type
         @additionalCss = additionalCss
+        @target = target
     end
 
     def input_placeholder

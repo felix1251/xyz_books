@@ -1,7 +1,8 @@
 <label class="relative flex items-center <%= @additionalCss %>">
     <%= search_icon_component additionalCss: "absolute left-5" if @type == "search" %>
     <input
-        type="text" 
+        type="text"
+        data-searchbook-target="<%= @target %>"
         placeholder="<%= input_placeholder %>" 
         class="py-3 w-full rounded-3xl border border-indigo-600 placeholder:text-gray-400 placeholder:text-lg <%= @type == "search" ? "pl-12 pr-4" : "px-5 bg-gray-100" %>"
     >

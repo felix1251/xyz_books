@@ -48,8 +48,8 @@ module ComponentHelper
         render Atoms::SearchIconComponent.new additionalCss: additionalCss
     end
 
-    def text_input_component type: "default", additionalCss: ""
-        render Atoms::TextInputComponent.new type: type, additionalCss: additionalCss
+    def text_input_component type: "default", additionalCss: "", target: ""
+        render Atoms::TextInputComponent.new type: type, additionalCss: additionalCss, target: target
     end
 
     def globe_icon_component

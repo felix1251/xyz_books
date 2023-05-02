@@ -1,17 +1,20 @@
 <nav class="container mx-auto px-5 py-2 md:py-9 flex items-center justify-between">
-    <a href="/" class="mr-10">
+    <a href="/" class="mr-2 md:mr-10">
         <%= main_logo_component %>
     </a>
-    <%= text_input_component type: "search", additionalCss: "ml-16 mr-28 hidden 2xl:flex" %>
-    <div class="block 2xl:hidden w-full xl:w-fit">
-        <%= search_icon_component additionalCss: "cursor-pointer h-6 w-6"%>
+    <div data-controller="searchbook">
+        <%= text_input_component type: "search", additionalCss: "md:ml-16 md:mr-28", target: "search" %>
+        <%= link_to("Find Book", "/search/", 
+            data: { "searchbook-target": "link" , action: "click->searchbook#search" },
+            method: :get ,format: :json, class: "hidden text-red-400 text-xl")
+        %>
     </div>
     <ul class="flex gap-8 items-center font-medium text-blue-950 text-lg">
-        <li class="hidden xl:block cursor-pointer hover:underline underline-offset-8 decoration-2">Home</li>
-        <li class="hidden xl:block cursor-pointer hover:underline underline-offset-8 decoration-2">Rent Textbooks</li>
-        <li class="hidden xl:block cursor-pointer hover:underline underline-offset-8 decoration-2">Buy Textbooks</li>
-        <li class="hidden xl:block cursor-pointer hover:underline underline-offset-8 decoration-2">Sell Textbooks</li>
-        <li class="block xl:hidden">
+        <li class="hidden 2xl:block cursor-pointer hover:underline underline-offset-8 decoration-2">Home</li>
+        <li class="hidden 2xl:block cursor-pointer hover:underline underline-offset-8 decoration-2">Rent Textbooks</li>
+        <li class="hidden 2xl:block cursor-pointer hover:underline underline-offset-8 decoration-2">Buy Textbooks</li>
+        <li class="hidden 2xl:block cursor-pointer hover:underline underline-offset-8 decoration-2">Sell Textbooks</li>
+        <li class="block 2xl:hidden">
             <%= hamburger_icon_component %>
         </li>
         <li class="hidden md:block -ml-2 place-items-center">

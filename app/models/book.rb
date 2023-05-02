@@ -78,7 +78,9 @@ class Book < ApplicationRecord
     def toISBN10(isbn13)
         isbn_values = isbn13
         isbn_values = isbn_values.upcase.gsub(/\ |-/, '').split('')
-        isbn_values = isbn_values[3, isbn_values.length]
+        isbn_values = isbn_values[3, isbn_values.length - 4 ]
+
+        puts isbn_values
 
         sum = 0
         isbn_values.each_with_index do |value, index|
