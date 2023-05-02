@@ -7,13 +7,13 @@ class Book < ApplicationRecord
     validates :isbn_10, uniqueness: true
     validates :isbn_13, uniqueness: true
     validates :publication_year, presence: true
-    validates :edition, presence: true
     validates :title, presence: true, uniqueness: true
 
     validate :validate_isbn
 
     private
 
+    #valdiate isbn and also set isbn format
     def validate_isbn
         isbn_10 = self.isbn_10
         isbn_13 = self.isbn_13
@@ -32,6 +32,7 @@ class Book < ApplicationRecord
         end
     end
 
+    # check ISBN10 if valid
     def validateIsbn10(isbn)
         if (isbn || '').match(/^(?:\d[\ |-]?){9}[\d|X]$/i)
             isbn_values = isbn.upcase.gsub(/\ |-/, '').split('')
@@ -49,12 +50,13 @@ class Book < ApplicationRecord
         end
     end
 
+    # check ISBN10 if valid
     def validateIsbn13(isbn)
         if (isbn || '').match(/^(?:\d[\ |-]?){13}$/i)
             isbn_values = isbn.upcase.gsub(/\ |-/, '').split('')
             return false if !isbn_values[0..2].join('').match(/(978|979)/)
             check_digit = isbn_values.pop.to_i
-
+            
             sum = 0
             isbn_values.each_with_index do |value, index|
                 multiplier = (index % 2 == 0) ? 1 : 3
@@ -70,6 +72,7 @@ class Book < ApplicationRecord
         end
     end
 
+    # ISBN10 to ISBN13 converter
     def toISBN13(isbn10)
         isbn10 = isbn10[0..isbn10.length - 2] # remove check digit!
         result = "978-" + isbn10
@@ -77,6 +80,7 @@ class Book < ApplicationRecord
         return isbnFormatter(type: "13", isbn: result)
     end
 
+    # ISBN13 to ISBN10 converter
     def toISBN10(isbn13)
         isbn_values = isbn13
         isbn_values = isbn_values.upcase.gsub(/\ |-/, '').split('')
@@ -93,6 +97,7 @@ class Book < ApplicationRecord
         return isbnFormatter(type: "10", isbn: result)
     end
     
+    # check ISBN13 digits
     def calcCheckDigitISBN13(isbn)
         result = '?'
         sum = 0
@@ -106,6 +111,7 @@ class Book < ApplicationRecord
         return result.to_s
     end
 
+    #format ISBN 10/13
     def isbnFormatter(type:, isbn:)
         isbn_value = isbn.upcase.gsub(/\ |-/, '')
 

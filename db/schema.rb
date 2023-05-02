@@ -40,9 +40,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_02_115725) do
   end
 
   create_table "authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "middle_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "middle_name", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,23 +58,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_02_115725) do
 
   create_table "books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
-    t.string "isbn_13"
-    t.string "isbn_10"
+    t.string "isbn_13", null: false
+    t.string "isbn_10", null: false
     t.string "publication_year"
-    t.string "edition"
-    t.bigint "author_id", null: false
+    t.string "edition", default: ""
     t.decimal "price", precision: 10, scale: 2, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "publisher_id", null: false
-    t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["isbn_10"], name: "index_books_on_isbn_10"
     t.index ["isbn_13"], name: "index_books_on_isbn_13"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 
   create_table "publishers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -83,6 +81,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_02_115725) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "book_authors", "authors"
   add_foreign_key "book_authors", "books"
-  add_foreign_key "books", "authors"
   add_foreign_key "books", "publishers"
 end
