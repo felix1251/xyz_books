@@ -24,16 +24,16 @@ pub3 = Publisher.create(name: "Publishers Weekly")
 book1 = Book.create(title: "The Underwater Welder", isbn_13: "978-1-60309-398-9", 
     publication_year: "2004", edition: "Book 2", publisher_id: pub1.id, price: "3000"
 )
-# book2 = Book.create(title: "American Elf", isbn_13: "978-1-891830-85-3", 
-#     publication_year: "2022", publisher_id: pub2.id, price: "1000"
-# )
-# book3 = Book.create(title: "Cosmoknights", isbn_10: "1-603-09454-7", 
-#     publication_year: "2019", edition: "Book 1", publisher_id: pub3.id, price: "2000"
-# )
+book2 = Book.create(title: "American Elf", isbn_13: "978-1-891830-85-3", 
+    publication_year: "2022", publisher_id: pub2.id, price: "1000"
+)
+book3 = Book.create(title: "Cosmoknights", isbn_10: "1-603-09454-7", 
+    publication_year: "2019", edition: "Book 1", publisher_id: pub3.id, price: "2000"
+)
 book4 = Book.create(title: "Essex County", isbn_10: "1-603-09038-X", 
     publication_year: "1990", publisher_id: pub3.id, price: "500"
 )
-book5 = Book.create(title: "Doughnuts And Doom", isbn_10: "1-603-09398-2", 
+book5 = Book.create(title: "Doughnuts And Doom", isbn_13: "978-1-60309-513-6", 
     publication_year: "2022", publisher_id: pub1.id, price: "100"
 )
 
