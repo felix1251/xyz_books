@@ -56,7 +56,7 @@ class Book < ApplicationRecord
             isbn_values = isbn.upcase.gsub(/\ |-/, '').split('')
             return false if !isbn_values[0..2].join('').match(/(978|979)/)
             check_digit = isbn_values.pop.to_i
-            
+        
             sum = 0
             isbn_values.each_with_index do |value, index|
                 multiplier = (index % 2 == 0) ? 1 : 3
@@ -74,9 +74,17 @@ class Book < ApplicationRecord
 
     # ISBN10 to ISBN13 converter
     def toISBN13(isbn10)
-        isbn10 = isbn10[0..isbn10.length - 2] # remove check digit!
-        result = "978-" + isbn10
-        result += calcCheckDigitISBN13("978" + isbn10)
+        isbn_values = isbn10[0..isbn10.length - 2] # remove check digit!
+        isbn_values = "978" + isbn_values.gsub(/\ |-/, '')
+
+        sum = 0
+        for i in 0..isbn_values.length
+            sum += isbn_values[i].to_i * if (i % 2 != 0) then 3 else 1 end
+        end
+    
+        result = ((10 - sum % 10) % 10).to_s
+        result = isbn_values + result
+
         return isbnFormatter(type: "13", isbn: result)
     end
 
@@ -100,10 +108,10 @@ class Book < ApplicationRecord
     # check ISBN13 digits
     def calcCheckDigitISBN13(isbn)
         result = '?'
-        sum = 0
 
-        for i in 0..isbn.length - 1
-            sum += isbn[i].to_i * if i.odd? then 3 else 1 end
+        sum = 0
+        for i in 0..isbn.length
+            sum += isbn[i].to_i * if (i % 2 != 0) then 3 else 1 end
         end
     
         result = (10 - sum % 10) % 10 # Fixnum
