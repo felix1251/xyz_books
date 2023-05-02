@@ -104,20 +104,6 @@ class Book < ApplicationRecord
 
         return isbnFormatter(type: "10", isbn: result)
     end
-    
-    # check ISBN13 digits
-    def calcCheckDigitISBN13(isbn)
-        result = '?'
-
-        sum = 0
-        for i in 0..isbn.length
-            sum += isbn[i].to_i * if (i % 2 != 0) then 3 else 1 end
-        end
-    
-        result = (10 - sum % 10) % 10 # Fixnum
-    
-        return result.to_s
-    end
 
     #format ISBN 10/13
     def isbnFormatter(type:, isbn:)
