@@ -16,6 +16,13 @@ cd xyz_books
 bundle install
 ```
 ## **Setup DB**
+Setup env variables for mysql credentials (create .env file inside project directory)
+
+Make sure MySQL is installed on your machine
+```
+DB_USERNAME = your_db_username
+DB_PASSWORD = your_db_pasword
+```
 ```
 rails db:setup
 ```
