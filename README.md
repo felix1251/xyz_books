@@ -4,8 +4,7 @@
 
 ***Ruby on Rails version 7.0.4***
 
-
-**Local commands**
+## **Local commands**
 
 **Clone repo**
 ```
