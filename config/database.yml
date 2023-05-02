@@ -51,5 +51,5 @@ test:
 production:
     <<: *default
     database: xzy_books_production
-    username: root
-    password: password
+    username: <%= ENV['DB_USERNAME'] %>
+    password: <%= ENV['DB_PASSWORD'] %>
