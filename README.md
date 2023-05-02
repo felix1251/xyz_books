@@ -4,7 +4,7 @@
 
 ***Ruby on Rails version 7.0.4***
 
-<a href="http://xyzbooks.fjc-shop.online/" target="_blank">Live App</a>
+<a href="http://xyzbooks.fjc-shop.online/" target="_blank" rel="noopener">Live App</a>
 
 ## Clone Repo
 ```
