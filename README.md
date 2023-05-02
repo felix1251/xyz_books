@@ -36,7 +36,7 @@ rails db:mgrate
 ```
 rails db:seed
 ```
-**Reset Setup** (Only if needed)
+**Reset Setup** (Only if needed, not required)
 ```
 rails db:reset
 ```
