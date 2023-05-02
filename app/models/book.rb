@@ -14,12 +14,15 @@ class Book < ApplicationRecord
         isbn_10 = self.isbn_10
         isbn_13 = self.isbn_13
 
-        if validateIsbn13(isbn_13)
-            self.isbn_13 = self.isbn_13.upcase.gsub(/\ |-/, '')
-            self.isbn_10 = toISBN10(isbn_13)
+        if validateIsbn13(isbn_13) && validateIsbn10(isbn_10)
+            self.isbn_13 = isbnFormatter(type: "13", isbn: isbn_13)
+            self.isbn_10 = isbnFormatter(type: "10", isbn: isbn_10)
         elsif validateIsbn10(isbn_10)
-            self.isbn_10 = self.isbn_10.upcase.gsub(/\ |-/, '')
+            self.isbn_10 = isbnFormatter(type: "10", isbn: isbn_10)
             self.isbn_13 = toISBN13(isbn_10)
+        elsif validateIsbn13(isbn_13)
+            self.isbn_13 = isbnFormatter(type: "13", isbn: isbn_13)
+            self.isbn_10 = toISBN10(isbn_13)
         else
             errors.add(:isbn, "invalid isbn")
         end
@@ -67,7 +70,7 @@ class Book < ApplicationRecord
         isbn10 = isbn10[0..isbn10.length - 2] # remove check digit!
         result = "978-" + isbn10
         result += calcCheckDigitISBN13("978" + isbn10)
-        return result
+        return isbnFormatter(type: "13", isbn: result)
     end
 
     def toISBN10(isbn13)
@@ -81,8 +84,9 @@ class Book < ApplicationRecord
         end
 
         check_sum = (sum % 11)
+        result = isbn_values.join("") + (check_sum == 10 ? "X" : check_sum.to_s)
 
-        return isbn_values.join("") + (check_sum == 10 ? "X" : check_sum.to_s)
+        return isbnFormatter(type: "10", isbn: result)
     end
     
     def calcCheckDigitISBN13(isbn)
@@ -96,5 +100,22 @@ class Book < ApplicationRecord
         result = (10 - sum % 10) % 10 # Fixnum
     
         return result.to_s
+    end
+
+    def isbnFormatter(type:, isbn:)
+        isbn_value = isbn.upcase.gsub(/\ |-/, '')
+        inc_values = []
+
+        if type == "10"
+            inc_values = [1,6,12]
+        elsif type == "13"
+            inc_values = [3,6,12, 15]
+        end
+
+        inc_values.each do |pos|
+            isbn_value.insert(pos, "-")
+        end
+        
+        return isbn_value
     end
 end
