@@ -1,6 +1,6 @@
 # XYZ Books
 
-***Ruby version 3.0.0***
+***Ruby version 3.0.0*** (make sure you install the correct version of ruby)
 
 ***Ruby on Rails version 7.0.4***
 
