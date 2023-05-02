@@ -10,7 +10,14 @@
 ```
 git clone https://github.com/felix1251/xyz_books.git
 ```
-**Install dependecies**
+```
+cd xyz_books
+```
+**Install Dependencies**
+```
+bundle install
+```
+**Setup DB**
 ```
 rails db:setup
 ```
@@ -23,4 +30,8 @@ rails db:mgrate
 ```
 ```
 rails db:seed
+```
+**Run local serve**
+```
+./bin/dev
 ```
