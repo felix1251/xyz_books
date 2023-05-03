@@ -34,17 +34,11 @@ DB_PASSWORD = your_db_pasword
 ```
 
 ```
-rails db:setup
-```
-
-**Or Equivalent**
-
-```
 rails db:create
 ```
 
 ```
-rails db:mgrate
+rails db:migrate
 ```
 
 ```
