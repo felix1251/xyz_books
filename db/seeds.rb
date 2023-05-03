@@ -48,8 +48,8 @@ BookAuthor.create(book_id: book4.id, author_id: author5.id)
 # BookAuthor.create(book_id: book5.id, author_id: author7.id)
 
 #Books image cover
-book1.cover.attach(io: File.open("app/assets/images/The_Underwater_Welder.png"), filename: "The_Bend_of_Luck.png")
-book2.cover.attach(io: File.open("app/assets/images/American_Elf.jpg"), filename: "American_Elf.jpg")
-book3.cover.attach(io: File.open("app/assets/images/Cosmoknights.jpg"), filename: "Cosmoknights.jpg")
-book4.cover.attach(io: File.open("app/assets/images/Essex_County.jpeg"), filename: "Essex_County.jpg")
+book1.cover.attach(io: File.open("app/assets/images/The_Underwater_Welder.png"), filename: "The_Bend_of_Luck.png") if !book1.cover.attached?
+book2.cover.attach(io: File.open("app/assets/images/American_Elf.jpg"), filename: "American_Elf.jpg") if !book2.cover.attached?
+book3.cover.attach(io: File.open("app/assets/images/Cosmoknights.jpg"), filename: "Cosmoknights.jpg") if !book3.cover.attached?
+book4.cover.attach(io: File.open("app/assets/images/Essex_County.jpeg"), filename: "Essex_County.jpg") if !book4.cover.attached?
 # book5.cover.attach(io: File.open("app/assets/images/doughnuts_&_Doom.png"), filename: "doughnuts_&_Doom.png")
