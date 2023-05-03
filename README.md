@@ -28,10 +28,14 @@ Setup env variables for mysql credentials (create .env file inside project direc
 
 Make sure MySQL is installed on your machine
 
+**ENV variables**
+
 ```
 DB_USERNAME = your_db_username
 DB_PASSWORD = your_db_pasword
 ```
+
+**Active Record**
 
 ```
 rails db:create
