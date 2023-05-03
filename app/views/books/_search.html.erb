@@ -9,7 +9,7 @@
             </div>
             <ul class="text-[1.4rem] space-y-1.5 tracking-wide">
                 <li>Edition: <span class="text-indigo-500"><%= book.edition %></span></li>
-                <li>Price: <span class="text-indigo-500"> PHP <%= book.price %></span></li>
+                <li>Price: <span class="text-indigo-500"> PHP <%=number_with_precision(book.price, precision: 2)%></span></li>
                 <li>ISBN: <span class="text-indigo-500"><%= book.isbn_13 %></span> </li>
                 <li>Publication Year: <span class="text-indigo-500"><%= book.publication_year %></span></li>
                 <li>Publisher: <span class="text-indigo-500"><%= book.name %></span></li>
