@@ -29,9 +29,9 @@ export default class extends Controller {
         const { classList } = temp;
         if (classList.contains(twcss)) {
             temp.classList.remove(twcss);
-        } else {
-            temp.classList.add(twcss);
+            return;
         }
+        temp.classList.add(twcss);
     }
 
     disconnect() {
