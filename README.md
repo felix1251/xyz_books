@@ -49,6 +49,8 @@ rails db:migrate
 rails db:seed
 ```
 
+Expect warnings running this seed command, because we are creating multple records at the same time for the purpose of having records in our db for the meantime. Though it won't break the app just a warning.
+
 **Reset Setup** (Only if needed, not required)
 
 ```
