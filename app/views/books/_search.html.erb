@@ -4,9 +4,7 @@
         <img class="w-[390px]  rounded-xl" src="<%= rails_blob_path(book.cover) %>">
         <div class="flex flex-col gap-5 nd:gap-10 text-[#061A36] font-bold">
             <h2 class="font-bold text-[2.2rem]"><%= book.title %></h2>
-            <div class="max-w-[700px] text-[1.3rem]"> by
-                <%= authors[0]&.book_author || "N/A" %>
-            </div>
+            <div class="max-w-[700px] text-[1.3rem]"> by <%= authors %></div>
             <ul class="text-[1.4rem] space-y-1.5 tracking-wide">
                 <li>Edition: <span class="text-indigo-500"><%= book.edition %></span></li>
                 <li>Price: <span class="text-indigo-500"> PHP <%=number_with_precision(book.price, precision: 2)%></span></li>

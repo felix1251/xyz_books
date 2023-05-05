@@ -5,15 +5,16 @@ class BooksController < ApplicationController
         @book = Book.joins(:publisher).select(:id, :title, :isbn_13, :isbn_10, :edition, :publication_year, :name, :price)
                     .find_by("isbn_13 = ? OR isbn_10 = ?", params[:isbn], params[:isbn])
 
-        @authors = @book.book_authors.select("book_authors.book_id, GROUP_CONCAT(CONCAT(authors.first_name,' ',authors.middle_name,' ',authors.last_name) SEPARATOR ', ') as book_author")
+        @authors = @book.book_authors.select("CONCAT(authors.first_name,' ',authors.middle_name,' ',authors.last_name) as book_author")
                         .joins(:author)
-                        .group("book_authors.book_id") rescue nil
+                        &.map(&:book_author)
+                        &.join(",")
 
         respond_to do |format|
             if @book.present?
                 format.turbo_stream { render turbo_stream: turbo_stream.replace("book", 
-                                    partial: "books/search", locals: { book: @book, authors: @authors || [] })}
-                format.json { render json: { book: @book, authors: @authors || [] }, status: :ok }
+                                    partial: "books/search", locals: { book: @book, authors: @authors || "N/A" })}
+                format.json { render json: { book: @book, authors: @authors || "N/A" }, status: :ok }
             else
                 format.turbo_stream { render turbo_stream: turbo_stream.replace("book", partial: "books/not_found") }
                 format.json { render json: "Book not found" , status: :not_found }
