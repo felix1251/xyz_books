@@ -13,7 +13,7 @@ class BooksController < ApplicationController
             if @book.present?
                 format.turbo_stream { render turbo_stream: turbo_stream.replace("book", 
                                     partial: "books/search", locals: { book: @book, authors: @authors || [] })}
-                format.json { render json: @book, status: :ok }
+                format.json { render json: { book: @book, authors: @authors || [] }, status: :ok }
             else
                 format.turbo_stream { render turbo_stream: turbo_stream.replace("book", partial: "books/not_found") }
                 format.json { render json: "Book not found" , status: :not_found }
