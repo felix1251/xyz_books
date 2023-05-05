@@ -8,7 +8,7 @@ class BooksController < ApplicationController
         @authors = @book.book_authors.select("CONCAT(authors.first_name,' ',authors.middle_name,' ',authors.last_name) as book_author")
                         .joins(:author)
                         &.map(&:book_author)
-                        &.join(",")
+                        &.join(", ")
 
         respond_to do |format|
             if @book.present?
