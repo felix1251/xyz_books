@@ -6,7 +6,7 @@
         <%= text_input_component type: "search", additionalCss: "md:ml-16 md:mr-28", target: "search" %>
         <%= link_to("Find Book", "/search/", 
             data: { "searchbook-target": "link" , action: "click->searchbook#search" },
-            method: :get ,format: :json, class: "hidden text-red-400 text-xl")
+            method: :get , params: {felix: "felix"}, class: "hidden text-red-400 text-xl")
         %>
     </div>
     <ul class="flex gap-8 items-center font-medium text-blue-950 text-lg">

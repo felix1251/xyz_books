@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  get "search/:isbn", to: "books#search", as: "search_book"
+  get "search/:isbn", to: "books#search",  defaults: { format: 'turbo_stream' }, as: "search_book"
 end
