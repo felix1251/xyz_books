@@ -59,17 +59,13 @@ export default class extends Controller {
     }
 
     reloadPathState() {
-        window.history.pushState({ path: "/" }, "", "/");
+        const changepath = this.path()
+        window.history.pushState({ path: changepath }, "", changepath);
     }
 
     initPath() {
-        const changepath =
-            window.location.protocol +
-            "//" +
-            window.location.host +
-            window.location.pathname +
-            "?search=" +
-            this.searchTarget.value;
+        const query = "?search=" + this.searchTarget.value;
+        const changepath = this.path(query)
         window.history.pushState({ path: changepath }, "", changepath);
     }
 
@@ -115,5 +111,12 @@ export default class extends Controller {
         if (result == 10) result = 0;
 
         return result == checkDigit;
+    }
+
+    path(query = ""){
+        if ( query ) {
+            return  window.location.protocol + "//" + window.location.host + window.location.pathname + query;
+        }
+        return "/";
     }
 }
