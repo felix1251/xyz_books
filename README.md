@@ -4,7 +4,7 @@
 
 **_Ruby on Rails version 7.0.4_**
 
-[Ubuntu 22.04 Ruby and Rails Installation](https://gorails.com/setup/ubuntu/22.04)
+[Ruby and ROR Installation (Ubuntu, Mac, Windows)](https://gorails.com/setup/ubuntu/22.04)
 
 <a href="https://xyzbooks.fjc-shop.online/" target="_blank" rel="noopener">Live App</a>
 
