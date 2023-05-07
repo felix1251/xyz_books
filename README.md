@@ -1,8 +1,11 @@
 # XYZ Books
 
-**_Ruby version 3.0.0_** (make sure you install the correct version of ruby)
+**_Ruby version 3.0.0_** (make sure you install the correct version of ruby) 
 
 **_Ruby on Rails version 7.0.4_**
+
+[Ubuntu 22.04 Ruby and Rails installation](https://gorails.com/setup/ubuntu/22.04)
+
 
 <a href="https://xyzbooks.fjc-shop.online/" target="_blank" rel="noopener">Live App</a>
 
