@@ -18,17 +18,9 @@ git clone https://github.com/felix1251/xyz_books.git
 cd xyz_books
 ```
 
-## Install Dependencies
-
-```
-bundle install
-```
-
-## Setup DB
+## ENV Variables
 
 Setup env variables for mysql credentials (create .env file inside project directory)
-
-ENV variables
 
 ```
 DB_NAME=xyz_books_db
@@ -41,10 +33,14 @@ DB_PORT=3306
 
 ## Docker Container
 
-[*] MySQL container
-
 ```
 docker compose run -d
+```
+
+## Install Dependencies
+
+```
+bundle install
 ```
 
 ## Active Record
