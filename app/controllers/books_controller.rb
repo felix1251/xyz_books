@@ -2,10 +2,12 @@ class BooksController < ApplicationController
   before_action :conditional_request_format
 
   def search
-    @book = Book.joins(:publisher).select(:id, :title, :isbn_13, :isbn_10, :edition, :publication_year, :name, :price)
+    @book = Book.joins(:publisher)
+                .select(:id, :title, :isbn_13, :isbn_10, :edition, :publication_year, :name, :price)
                 .find_by('isbn_13 = ? OR isbn_10 = ?', params[:isbn], params[:isbn])
 
-    @authors = @book&.book_authors&.select("CONCAT(authors.first_name,' ',authors.middle_name,' ',authors.last_name) as book_author")
+    @authors = @book&.book_authors
+                    &.select("CONCAT(authors.first_name,' ',authors.middle_name,' ',authors.last_name) as book_author")
                     &.joins(:author)
                     &.map(&:book_author)
                     &.join(', ')
@@ -13,8 +15,8 @@ class BooksController < ApplicationController
     respond_to do |format|
       if @book.present?
         format.turbo_stream do
-          render turbo_stream: turbo_stream.replace('book',
-                                                    partial: 'books/search', locals: { book: @book, authors: @authors || 'N/A' })
+          render turbo_stream: turbo_stream
+            .replace('book', partial: 'books/search', locals: { book: @book, authors: @authors || 'N/A' })
         end
         format.json { render json: { book: @book, authors: @authors || 'N/A' }, status: :ok }
       else
