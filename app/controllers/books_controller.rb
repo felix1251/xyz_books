@@ -6,22 +6,19 @@ class BooksController < ApplicationController
                 .select(:id, :title, :isbn_13, :isbn_10, :edition, :publication_year, :name, :price)
                 .find_by('isbn_13 = ? OR isbn_10 = ?', params[:isbn], params[:isbn])
 
-    @authors = @book&.book_authors
-                    &.select("CONCAT(authors.first_name,' ',authors.middle_name,' ',authors.last_name) as book_author")
-                    &.joins(:author)
-                    &.map(&:book_author)
-                    &.join(', ')
-
     respond_to do |format|
       if @book.present?
-        format.turbo_stream do
-          render turbo_stream: turbo_stream
-            .replace('book', partial: 'books/search', locals: { book: @book, authors: @authors || 'N/A' })
-        end
-        format.json { render json: { book: @book, authors: @authors || 'N/A' }, status: :ok }
+        @authors = @book&.book_authors
+                        &.select("CONCAT(authors.first_name,' ',authors.middle_name,' ',authors.last_name) as book_author")
+                        &.joins(:author)
+                        &.map(&:book_author)
+                        &.join(', ')
+
+        format.turbo_stream
       else
-        format.turbo_stream { render turbo_stream: turbo_stream.replace('book', partial: 'books/not_found') }
-        format.json { render json: 'Book not found', status: :not_found }
+        format.turbo_stream do
+          render partial: 'not_found'
+        end
       end
     end
   end

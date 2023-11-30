@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "book" do %>
+  <%= render partial: "search", locals: {book: @book, authors: @authors} %>
+<% end %>
