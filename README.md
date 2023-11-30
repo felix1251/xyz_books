@@ -1,6 +1,6 @@
 # XYZ Books
 
-**_Ruby version 3.0.0_** (make sure you install the correct version of ruby) 
+**_Ruby version 3.2.2_** (make sure you install the correct version of ruby)
 
 **_Ruby on Rails version 7.0.4_**
 
@@ -24,20 +24,30 @@ cd xyz_books
 bundle install
 ```
 
-## **Setup DB**
+## Setup DB
 
 Setup env variables for mysql credentials (create .env file inside project directory)
 
-Make sure MySQL is installed on your machine
-
-**ENV variables**
+ENV variables
 
 ```
-DB_USERNAME = your_db_username
-DB_PASSWORD = your_db_pasword
+DB_NAME=xyz_books_db
+DB_TEST_NAME=xyz_books_db_test
+DB_USER=root
+DB_PASSWORD=password
+DB_HOST=0.0.0.0
+DB_PORT=3306
 ```
 
-**Active Record**
+## Docker Container
+
+[*] MySQL container
+
+```
+docker compose run -d
+```
+
+## Active Record
 
 ```
 rails db:create
@@ -59,13 +69,13 @@ rails db:seed
 rails db:reset
 ```
 
-## **Run Local Server**
+## Run Local Server
 
 ```
 ./bin/dev
 ```
 
-## **Sample ISBN values to search**
+## Sample ISBN values to search
 
 ISBN13
 
