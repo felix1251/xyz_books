@@ -1,1 +1,0 @@
-server "0.0.0.0", user: 'deploy', roles: %w{app db web}
