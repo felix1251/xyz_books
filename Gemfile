@@ -81,5 +81,3 @@ gem 'dotenv-rails'
 gem 'view_component', '~> 2.82'
 
 gem 'isbnify'
-
-gem 'image_processing', '>= 1.2'
