@@ -3,11 +3,7 @@ FROM ruby:3.2.2
 WORKDIR /app
 
 # Install dependencies
-RUN apt-get update && \
-    apt-get install -y \
-    build-essential \
-    nodejs && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
 ENV RAILS_ENV production
 ENV RAILS_SERVE_STATIC_FILES true
