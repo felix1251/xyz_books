@@ -1,5 +1,11 @@
 version: "3"
 services:
+  web:
+    image: xyz_books
+    build:
+      context: .
+    depends_on:
+      - mysql
   mysql:
     image: mysql:8.0.33
     container_name: xyz_books_db_container
@@ -7,10 +13,10 @@ services:
       - "3306:3306"
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysqld
 volumes:
