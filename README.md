@@ -6,7 +6,7 @@
 
 [Ruby and ROR Installation (Ubuntu, Mac, Windows)](https://gorails.com/setup/ubuntu/22.04)
 
-<a href="https://xyzbooks.fjc-shop.online/" target="_blank" rel="noopener">Live App</a>
+<a href="https://xyz.felixabacajen.info">Live App</a>
 
 ## Clone Repo
 
